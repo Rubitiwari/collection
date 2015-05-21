@@ -1,5 +1,6 @@
 package com.demo.map;
 
+import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.Map.Entry;
@@ -13,12 +14,12 @@ public class HashTableImple {
 		// Hash table is thread safe. 
 		// you can not insert null as key in hash table. .
 	
-		 hashtable.put(1f, 12);
-		 hashtable.put(12f, 12);
+		 hashtable.put(1f, 11);
+		 hashtable.put(12f, 15);
 		 
-		 hashtable.put(14f, 12);
+		 hashtable.put(14f, 14);
 		 
-		 hashtable.put(14f, 12);
+		 hashtable.put(14f, 13);
 		 
 		 hashtable.put(15f, 12);
 		 
@@ -69,12 +70,25 @@ Set<Entry<Float, Integer>> entrySet= hashtable.entrySet();
            System.out.println("value:"+entry.getValue());			
 		}
 		 
-		 
-		 
-		
- 
-		
-		
+		/**
+		 *  
+		 *  Enumeration...
+		 *   
+		 */
+		  
+		  //enum  
+		  //  java generics and collection. 
+		  //  read it in reverse direction. 
+		  
+		  Enumeration<Integer>enumeration =  hashtable.elements();
+		   while (enumeration.hasMoreElements()) {
+			Integer i = (Integer) enumeration.nextElement();
+			System.out.println(" value: "+i);
+		}
+		// hashTable.keys() returns enumeration of keys
+		   
+		   // TreeMap sorts data according to key.
+		  // whatever the key is . It must be comparable. otherwise you cannot sort it. 
 	
 	}
 }
