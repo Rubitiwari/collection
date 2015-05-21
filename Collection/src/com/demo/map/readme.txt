@@ -19,6 +19,16 @@
   
    // in map we use put method to add data instead of add method( which is available in set and list) 
    //     
+     
+     
+       Map 
+         HashMap    ---- does not maintain order  
+         HashTable(Thread safe)  ---- ---- It also does not maintain order used in thread safe envirmnt. 
+         LinkedHashMap  ===  -- maintains order 
+         TreeMap ------   sorts data according to key.(natural order)
+         
+          
+         
       
      
      
