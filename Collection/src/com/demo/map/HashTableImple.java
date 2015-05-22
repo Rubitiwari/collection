@@ -55,10 +55,12 @@ public class HashTableImple {
 			System.out.println("key :"+float1);
 		}
 		 
-		 // another aproach to iterate map is entryset. 
+		 // another approach to iterate map in EntrySet. 
+		 //using EntrySet we can print key&value both of map while keySet only for key
 		 
 		 
 Set<Entry<Float, Integer>> entrySet= hashtable.entrySet();
+
 		 
 		   
               Iterator<Entry<Float, Integer>> iterator3=    entrySet.iterator();
