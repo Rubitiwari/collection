@@ -57,7 +57,11 @@ public class GenericImple {
             iteratePersonList(listOfPerson);;
             iteratePersonList2(listOfCustomer);
            
-
+              putData(listOfCustomer);
+              putData(listOfPerson);
+              
+              GenericImple.<Customer>copyGeneric(listOfPerson, listOfCustomer);;
+              
 	}
 
   // this shows cast iron guarantee. 
@@ -101,7 +105,41 @@ public class GenericImple {
 	    Person person=personListS.get(0);
 	 
 	}
+	
+	// Object super Person  --- put priciple.
+	// Person super Customer  ---  You can  list of Person while you can only put either 
+	// Customer or its child class. 
+	
 
+	// i want to create a method which copy data from list of person and put it onto List of Peron 
+	
+	
+	public static void putData(List<? super Customer> custList){
+		
+		// in put principle you can add here either Customer 
+		custList.add(new Customer("rajeev")); //
+	}
+	
+	
+	
+	public static void copy (List <? super Person> dst,List<? extends Person> src){
+		for (int i = 0; i < src.size(); i++) {
+			dst.add(src.get(i));
+		}
+		
+	}
+
+	
+	// generic method which can do any this. 
+	
+	public static <T> void   copyGeneric(List<? super T> dst,List <? extends T>src ){
+		for (int i = 0; i < src.size(); i++) {
+			dst.add(src.get(i));
+		}
+	}
+	
+	
+	
 
 
 
